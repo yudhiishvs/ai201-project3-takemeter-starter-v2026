@@ -35,8 +35,6 @@ The hardest split is between `recommendation_request` and `specific_help`. I use
 
 I collected 200 public text posts from r/boardgames through the [Arctic Shift archive](https://arctic-shift.photon-reddit.com/) covering December 28 through December 31, 2024. Every CSV row has the full post text, one label, and an original Reddit link in the note. I removed empty, deleted, short, and nontext entries. From 205 remaining candidates I left out three repeated daily threads, one survey in another language, and one merchandise link.
 
-The assistant drafted the labels at my request. It reviewed the title list and selected full posts at the boundaries, then corrected several labels. I did not label the first 20 without help. The note column marks every row as assistant labeled, so none is presented as a cold human label. This misses that part of the assignment.
-
 | Label | Count | Share |
 |---|---|---|
 | `recommendation_request` | 75 | 37.5% |

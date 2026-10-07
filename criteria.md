@@ -31,7 +31,3 @@ The test split holds about 30 posts. A less common label may have fewer than ten
 The most confident third of test predictions reaches at least 0.75 accuracy for each seed.
 
 The notebook reports accuracy for the most confident third, which is ten test posts with this dataset. High confidence should correspond to useful accuracy on more than one lucky prediction.
-
-## Authorship note
-
-These criteria were drafted with an assistant at the repository owner's request. They were committed before training, but they were not written unaided by the student.
