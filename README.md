@@ -2,7 +2,7 @@
 
 ## What This Does
 
-TakeMeter sorts text posts from r/boardgames by the kind of response they invite. A post can ask for a recommendation, ask for specific help, or open a discussion. The labels describe the post's main request, rather than its tone or the game it mentions. This repository contains 200 labeled posts and one local DistilBERT training run.
+TakeMeter sorts text posts from r/boardgames by the kind of response they invite. A post can ask for a recommendation, ask for specific help, or open a discussion. The labels describe the post's main request, rather than its tone or the game it mentions. The original training file held 200 labeled posts. The measured improvement in unit 6 added 30 more.
 
 ## Label Taxonomy
 
@@ -35,7 +35,7 @@ The hardest split is between `recommendation_request` and `specific_help`. I use
 
 I collected 200 public text posts from r/boardgames through the [Arctic Shift archive](https://arctic-shift.photon-reddit.com/) covering December 28 through December 31, 2024. Every CSV row has the full post text, one label, and an original Reddit link in the note. I removed empty, deleted, short, and nontext entries. From 205 remaining candidates I left out three repeated daily threads, one survey in another language, and one merchandise link.
 
-| Label | Count | Share |
+| Label in the original sample | Count | Share |
 |---|---|---|
 | `recommendation_request` | 75 | 37.5% |
 | `specific_help` | 80 | 40.0% |
@@ -77,3 +77,7 @@ Both models were scored on the same 30 posts in `test_split.csv`. The baseline u
 | F1 for `specific_help` | 0.455 | 0.435 | -0.020 |
 
 The trained model did not beat the baseline on any listed measure. My prediction about recommendation requests was wrong. Fine tuning on this dataset did not add measurable value on these held out posts.
+
+## The Improvement
+
+All three initial trials gave `open_discussion` an F1 of zero. It was the smallest original label with 45 posts, while the other labels had 75 and 80. The baseline reached 0.375 F1 on that label, so the distinction was possible on the held out set. I added 30 public r/boardgames discussion posts from December 24 through December 27, 2024, without changing the label definitions, the original rows, the criteria, or the training settings. The file now has 75 recommendation requests, 80 specific help posts, and 75 open discussions. The new rows are assistant labeled and have original post links in the note column. I will compare the same three seeds before and after this one data change.
