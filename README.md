@@ -61,3 +61,7 @@ Run the same local check with `.venv/bin/python test.py`. Run the training cells
 I asked an assistant to help turn the observed r/boardgames posts into a small set of labels. It proposed distinctions based on whether a writer wanted recommendations, targeted help, or discussion. I chose the three labels above and wrote the decision rule around the requested answer.
 
 I also asked it to collect and label 200 real posts and run the local training. It retrieved public archive records, added the original Reddit link to each row, reviewed selected ambiguous posts, and adjusted their labels before training. I did not independently verify all 200 labels, so the dataset may contain label errors. The first 20 rows were not labeled cold. The assistant also drafted `criteria.md` and this README, and those contributions are disclosed here rather than presented as unaided student work.
+
+## Baseline vs. Trained
+
+Before running the baseline, I expect the trained model to recognize recommendation requests more often. Those posts often name the kind of game or product sought, which gives the trained model repeated cues in the labeled set. I already know the trained model's unit 5 score, so this prediction concerns the comparison, not an unseen trained result.
