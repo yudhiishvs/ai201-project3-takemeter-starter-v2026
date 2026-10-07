@@ -65,3 +65,15 @@ I also asked it to collect and label 200 real posts and run the local training. 
 ## Baseline vs. Trained
 
 Before running the baseline, I expect the trained model to recognize recommendation requests more often. Those posts often name the kind of game or product sought, which gives the trained model repeated cues in the labeled set. I already know the trained model's unit 5 score, so this prediction concerns the comparison, not an unseen trained result.
+
+Both models were scored on the same 30 posts in `test_split.csv`. The baseline used the definitions in `label_definitions.txt` and received no training examples from this project.
+
+| Measure | Baseline | Trained | Trained minus baseline |
+|---|---|---|---|
+| Overall accuracy | 0.500 | 0.467 | -0.033 |
+| Macro F1 | 0.489 | 0.345 | -0.144 |
+| F1 for `open_discussion` | 0.375 | 0.000 | -0.375 |
+| F1 for `recommendation_request` | 0.636 | 0.600 | -0.036 |
+| F1 for `specific_help` | 0.455 | 0.435 | -0.020 |
+
+The trained model did not beat the baseline on any listed measure. My prediction about recommendation requests was wrong. Fine tuning on this dataset did not add measurable value on these held out posts.
