@@ -28,9 +28,9 @@ The test split holds about 30 posts. A less common label may have fewer than ten
 
 ## 5. Confidence
 
-Among test predictions with confidence of at least 0.70, accuracy reaches at least 0.75 for each seed, provided at least five predictions meet that threshold.
+The most confident third of test predictions reaches at least 0.75 accuracy for each seed.
 
-High confidence should mean more than a strong looking number. The minimum count keeps a single lucky prediction from satisfying the target.
+The notebook reports accuracy for the most confident third, which is ten test posts with this dataset. High confidence should correspond to useful accuracy on more than one lucky prediction.
 
 ## Authorship note
 
